@@ -31,7 +31,7 @@ public class NearToYouIntentService  extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Log.d("NearToYouIntentService", "NearToYouIntentService start scheduling task");
         executor = new ScheduledThreadPoolExecutor(0);
-        executor.scheduleAtFixedRate(new GetInfoRunnable(), 0, 3, TimeUnit.MINUTES);
+        executor.scheduleAtFixedRate(new GetInfoRunnable(), 0, 30, TimeUnit.SECONDS);
         Log.d("NearToYouIntentService", "Task scheduled");
     }
 }
