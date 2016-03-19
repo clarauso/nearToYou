@@ -1,5 +1,6 @@
 package ux.hackathon.reply.it.neartoyou;
 
+import com.facebook.FacebookSdk;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
