@@ -1,5 +1,6 @@
 package ux.hackathon.reply.it.neartoyou;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,6 +68,15 @@ public class RecommendationsActivity extends AppCompatActivity {
                                 childPosition), Toast.LENGTH_SHORT
                 ).show();
 
+
+                Intent intent = new Intent(getApplicationContext(), RatingsActivity.class);
+                intent.putExtra("ActivityTitle", expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition));
+                startActivity(intent);
+                /*
+                EditText editText = (EditText) findViewById(R.id.edit_message);
+                String message = editText.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                */
                 return false;
             }
         });

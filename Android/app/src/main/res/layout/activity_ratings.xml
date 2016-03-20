@@ -7,15 +7,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ux.hackathon.reply.it.neartoyou.MainActivity">
+    tools:context="ux.hackathon.reply.it.neartoyou.RatingsActivity">
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
+    <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/ratingBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submitButton"
+        android:layout_alignTop="@+id/ratingBar"
+        android:layout_toRightOf="@+id/ratingBar"
+        android:layout_toEndOf="@+id/ratingBar" />
 </RelativeLayout>
