@@ -81,15 +81,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // add the recommendation marker
             LatLng recommandationMarker = new LatLng(activeRecommendation.getLatitude(), activeRecommendation.getLongitude());
             mMap.addMarker(new MarkerOptions().position(recommandationMarker).title(activeRecommendation.getName()));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(recommandationMarker));
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(recommandationMarker, 17));
         }
-
-        /*
-        if (map != null && bc != null) {
-            map.animateCamera(CameraUpdateFactory.newLatLngBounds(bc.build(), 100));
-        }
-        */
-
 
     }
 }
