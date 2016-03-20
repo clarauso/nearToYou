@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">NearToYou</string>
     <string name="facebook_app_id">515222035328910</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
