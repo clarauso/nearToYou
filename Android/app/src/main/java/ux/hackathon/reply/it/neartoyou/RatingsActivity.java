@@ -1,5 +1,6 @@
 package ux.hackathon.reply.it.neartoyou;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,11 @@ public class RatingsActivity extends AppCompatActivity {
                 //String totalStars = "Total Stars:: " + simpleRatingBar.getNumStars();
                 String rating = "Rating :: " + simpleRatingBar.getRating();
                 Log.d("PLACE RATING", rating);
+
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                //intent.putExtra("ActivityTitle", expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition));
+                startActivity(intent);
+
                 //Toast.makeText(getApplicationContext(), totalStars + "\n" + rating, Toast.LENGTH_LONG).show();
             }
         });

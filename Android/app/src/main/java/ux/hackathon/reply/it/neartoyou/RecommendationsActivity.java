@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import ux.hackathon.reply.it.neartoyou.model.Recommendation;
 import ux.hackathon.reply.it.neartoyou.recommendations.RecommendationData;
 
 public class RecommendationsActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class RecommendationsActivity extends AppCompatActivity {
     ExpandableListView expandableListView;
     ExpandableListAdapter expandableListAdapter;
     List<String> expandableListTitle;
-    HashMap<String, List<String>> expandableListDetail;
+    HashMap<String, List<Recommendation>> expandableListDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,24 +60,12 @@ public class RecommendationsActivity extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-                Toast.makeText(
-                        getApplicationContext(),
-                        expandableListTitle.get(groupPosition)
-                                + " -> "
-                                + expandableListDetail.get(
-                                expandableListTitle.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT
-                ).show();
+                Toast.makeText(getApplicationContext(), "Loading content...", Toast.LENGTH_SHORT).show();
 
-
-                Intent intent = new Intent(getApplicationContext(), RatingsActivity.class);
-                intent.putExtra("ActivityTitle", expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition));
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                intent.putExtra("SelectedRecommendation", expandableListDetail.get(expandableListTitle.get(groupPosition)).get(childPosition));
                 startActivity(intent);
-                /*
-                EditText editText = (EditText) findViewById(R.id.edit_message);
-                String message = editText.getText().toString();
-                intent.putExtra(EXTRA_MESSAGE, message);
-                */
+
                 return false;
             }
         });
